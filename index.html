@@ -1,15 +1,175 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Apache2 Debian Default Page: It works</title>
-    <link rel="stylesheet" href="/styles/index.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assertiva</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
   </head>
   <body>
-    <div class="container">
-      <h1>Hello Assertiva</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-lg">
+        <a class="navbar-brand" href="#"><b>Assertiva</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pedidos</a>
+            </li>
+          </ul>
+          <form class="d-flex" id="logoutForm">
+            <button class="btn btn-danger" type="submit">Sair</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container-lg">
+      <h1 class="my-3">Pedidos</h1>
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Código, Título, data..." aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Procurar</button>
+          </form>
+        </div>
+        <div class="col-12 col-sm-6 mt-2 mt-sm-0 d-block">
+          <button class="btn btn-primary d-block ms-auto">Criar pedido</button>
+        </div>
+      </div>
+      <div class="table-responsive-xl">
+        <table class="table table-striped table-hover align-middle">
+          <thead>
+            <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Título</th>
+              <th scope="col">Data</th>
+              <th scope="col">Status</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">1341324</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold text-info">
+                <span class="badge bg-danger">Rejeitado</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">7367322</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold text-success">
+                <span class="badge bg-info">Enviando</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">2762554</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold">
+                <span class="badge bg-success">Entregue</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">8756265</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold">
+                <span class="badge bg-primary">Recebido pela Assertiva</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">8677654</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold">
+                <span class="badge bg-warning">Em processo</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">1341324</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold text-info">
+                <span class="badge bg-danger">Rejeitado</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">7367322</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold text-success">
+                <span class="badge bg-info">Enviando</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">2762554</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold">
+                <span class="badge bg-success">Entregue</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">8756265</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold">
+                <span class="badge bg-primary">Recebido pela Assertiva</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">8677654</td>
+              <td>Comprovante em PDF</td>
+              <td class="fw-bold">
+                <span class="badge bg-warning">Em processo</span>
+              </td>
+              <td>23 de Março de 2021</td>
+              <td>
+                <div class="btn btn-sm btn-secondary">Ver</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   </body>
 </html>
-
