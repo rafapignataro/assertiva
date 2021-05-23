@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,30 +18,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Pedidos</a>
-            </li>
+            </li> -->
           </ul>
           <form class="d-flex" id="logoutForm">
-            <button class="btn btn-danger" type="submit">Sair</button>
+            <a href="/login.html" class="btn btn-danger w-100" type="submit">Sair</a>
           </form>
         </div>
       </div>
     </nav>
     <div class="container-lg">
       <h1 class="my-3">Pedidos</h1>
-      <div class="row">
-        <div class="col-12 col-sm-6">
+      <div class="row justify-content-between">
+        <div class="col-sm-6 col-md-5 col-lg-4">
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Código, Título, data..." aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Procurar</button>
           </form>
         </div>
-        <div class="col-12 col-sm-6 mt-2 mt-sm-0 d-block">
-          <button class="btn btn-primary d-block ms-auto">Criar pedido</button>
+        <div class="col-12 col-sm-3 col-lg-2 mt-2 mt-sm-0 d-block">
+          <button type="button" class="btn btn-primary d-block ms-auto w-100" data-bs-toggle="modal" data-bs-target="#createOrderModal">
+            Criar pedido
+          </button>
         </div>
       </div>
       <div class="table-responsive-xl">
@@ -56,120 +58,132 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td scope="row">1341324</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold text-info">
-                <span class="badge bg-danger">Rejeitado</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">7367322</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold text-success">
-                <span class="badge bg-info">Enviando</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">2762554</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold">
-                <span class="badge bg-success">Entregue</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">8756265</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold">
-                <span class="badge bg-primary">Recebido pela Assertiva</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">8677654</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold">
-                <span class="badge bg-warning">Em processo</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">1341324</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold text-info">
-                <span class="badge bg-danger">Rejeitado</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">7367322</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold text-success">
-                <span class="badge bg-info">Enviando</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">2762554</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold">
-                <span class="badge bg-success">Entregue</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">8756265</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold">
-                <span class="badge bg-primary">Recebido pela Assertiva</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">8677654</td>
-              <td>Comprovante em PDF</td>
-              <td class="fw-bold">
-                <span class="badge bg-warning">Em processo</span>
-              </td>
-              <td>23 de Março de 2021</td>
-              <td>
-                <div class="btn btn-sm btn-secondary">Ver</div>
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
     </div>
+    <div class="modal fade" id="createOrderModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createOrderModal" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Criar pedido</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form class="row" id="createOrderForm">
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label for="title" class="form-label">Título do pedido</label>
+                    <input type="text" class="form-control" id="title" placeholder="Descreva sucintamente">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <div class="mb-3">
+                      <label for="templateFiles" class="form-label">Insira aqui os arquivos de template</label>
+                      <input class="form-control" type="file" id="templateFiles" multiple>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <div class="mb-3">
+                      <label for="contentFiles" class="form-label">Insira aqui os arquivos de conteúdo</label>
+                      <input class="form-control" type="file" id="contentFiles" multiple>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label for="description" class="form-label">Adicione algum complemento</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button form="createOrderForm" id="createOrderButton" type="submit" class="btn btn-primary">Criar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script>
+      const orders = [
+        {id: '15444176', title: 'Comprovante em PDF', createdAt: '30/12/2020', status: 'Processando'}, 
+        {id: '13512353', title: 'Comprovante em PDF', createdAt: '30/12/2020', status: 'Processado'}, 
+        {id: '12515461', title: 'Comprovante em PDF', createdAt: '30/12/2020', status: 'Rejeitado'},
+        {id: '16454646', title: 'Comprovante em PDF', createdAt: '30/12/2020', status: 'Processando'},
+        {id: '87364525', title: 'Comprovante em PDF', createdAt: '30/12/2020', status: 'Processado'},
+        {id: '57676256', title: 'Comprovante em PDF', createdAt: '30/12/2020', status: 'Rejeitado'},
+        {id: '45245764', title: 'Comprovante em PDF', createdAt: '30/12/2020', status: 'Processando'},
+        {id: '24567652', title: 'Comprovante em PDF', createdAt: '30/12/2020', status: 'Processado'},
+      ];
+
+      const normalizeStatusColor = {
+        'processando': 'primary',
+        'processado': 'success',
+        'rejeitado': 'danger'
+      };
+      window.onload = () => {
+        const ordersTableBody = document.querySelector('table tbody');
+        
+        orders.forEach(order => {
+          const tableRow = ordersTableBody.insertRow(0);
+          const { id, title, createdAt, status } = order;
+          const statusColor = normalizeStatusColor[status.toLocaleLowerCase()];
+
+          const cell1 = tableRow.insertCell(0);
+          cell1.innerHTML = id;
+          const cell2 = tableRow.insertCell(1);
+          cell2.innerHTML = title;
+          const cell3 = tableRow.insertCell(2);
+          cell3.className = 'fw-bold'
+          cell3.innerHTML = `<span class="badge bg-${statusColor}">${status}</span>`;
+          const cell4 = tableRow.insertCell(3);
+          cell4.innerHTML = createdAt;
+          const cell5 = tableRow.insertCell(4);
+          cell5.innerHTML = `<div class="btn btn-sm btn-secondary">Ver pedido</div>`;
+        })
+      };
+      const form = document.getElementById('createOrderForm');
+      const createOrderButton = document.getElementById('createOrderButton');
+  
+      form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+  
+        const titleValue = document.getElementById('title').value;
+        const descriptionValue = document.getElementById('description').value;
+  
+        try {
+          if(titleValue === '' || descriptionValue === '') throw new Error('Preencha todos os campos!');
+  
+          const data = {
+            title: titleValue,
+            description: descriptionValue,
+          };
+          
+          createOrderButton.disabled = true;
+  
+          // const response = await fetch('/url', {
+          //   method: 'POST',
+          //   headers: {
+          //     'Content-Type': 'application/json'
+          //   },
+          //   body: JSON.stringify(data)
+          // });
+  
+          // if(!response.ok) throw Error();
+          location.reload();
+        } catch (err) {
+          alert(err.message || 'Erro ao logar! Tente novamente!')
+        } finally {
+          createOrderButton.disabled = false;
+        }
+      })
+    </script>  
   </body>
 </html>
